@@ -1,3 +1,5 @@
+import { AddNewItem } from "./AddNewItem";
+import { Card } from "./Card";
 import { ColumnContainer, ColumnTitle, CardContainer } from "./styles";
 
 type ColumnProps = {
@@ -8,9 +10,14 @@ export const Column = ({text}: ColumnProps) => {
     return (
         <ColumnContainer>
             <ColumnTitle>{text}</ColumnTitle>
-            <CardContainer>One</CardContainer>
-            <CardContainer>Two</CardContainer>
-            <CardContainer>Three</CardContainer>
+            <Card text="2"/>
+            <Card text="Two"/>
+            <Card text="Three"/>
+            <AddNewItem
+                toggleButtonText="+ Add another card"
+                onAdd={() => console.log("Item created")}
+                dark
+            />
         </ColumnContainer>
     )
 }
